@@ -122,6 +122,9 @@ def parkes_error_zone_detailed(act, pred, diabetes_type):
 
     raise Exception('Unsupported diabetes type')
 
+clarke_error_zone_detailed = np.vectorize(clarke_error_zone_detailed)
+parkes_error_zone_detailed = np.vectorize(parkes_error_zone_detailed)
+
 def zone_accuracy(act_arr, pred_arr, mode='clarke', detailed=False, diabetes_type=1):
     """
     Calculates the average percentage of each zone based on Clarke or Parkes
